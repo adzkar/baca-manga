@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.form-{
+   margin: 0 auto;
+   margin-top: 200px;
+}
+.outter-form {
+    padding: 20px;
+    background: #EEEEEE;
+    position: relative;
+    border-radius: 5px;
+}
+.inner .form-control {
+    background: #D3D3D3;
+}
+h3.title-menu {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.btn-custom {
+    background: #4286f4;
+    color: #fff;
+}
+#loginform {
+    margin: auto;
+    margin-top: 90px;
+    padding: 10px;
+    padding-bottom: 20vh;
+}
+footer {
+    clear: both;
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 7em;
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+}
