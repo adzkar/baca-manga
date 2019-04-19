@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// load eloquent
+require_once 'vendor/autoload.php';
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -58,7 +60,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('session','template');
+$autoload['libraries'] = array('session','template','database');
 
 /*
 | -------------------------------------------------------------------
