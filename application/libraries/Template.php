@@ -18,6 +18,8 @@ class Template {
                         $data['title'] = null;
                 if (!isset($data['url']))
                         $data['url'] = null;
+                if (!isset($data['data']))
+                        $data['data'] = null;
                 $this->CI->load->view('admin/components/v_menu',
                         [
                                 'title' => $data['title']
@@ -26,7 +28,7 @@ class Template {
                 if (!isset($data['content'])) {
                         $this->CI->load->view('admin/v_blank');
                 } else if(isset($data['content'])) {
-                        $this->CI->load->view($data['content']);
+                        $this->CI->load->view($data['content'],$data['data']);
                 }
                 $this->CI->load->view('admin/components/v_footer');
         }

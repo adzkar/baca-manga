@@ -11,6 +11,15 @@
         </div>
       </div>
       <!-- cari -->
+      <?php 
+            if ($this->session->flashdata('success')) {
+        ?>
+        <div class="alert alert-success">
+            <?= $this->session->flashdata('success')?>
+        </div>
+        <?php  
+            }
+        ?>
       <!-- Table -->
       <table class="table table-bordered">
         <thead class="thead-light">
@@ -22,32 +31,33 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <img src="img/thumbnail.jpg" width="50" height="70">
-            </td>
-            <td>One Piece</td>
-            <td>
-              <button type="button" class="btn btn-sm btn-primary">Tambah Chapter</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn-sm btn-danger">Hapus</button>
-              <button type="button" class="btn btn-sm btn-warning">Ubah</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/thumbnail.jpg" width="50" height="70">
-            </td>
-            <td>Ancok</td>
-            <td>
-              <button type="button" class="btn btn-sm btn-primary">Tambah Chapter</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn-sm btn-danger">Hapus</button>
-              <button type="button" class="btn btn-sm btn-warning">Ubah</button>
-            </td>
-          </tr>
+          <?php
+            if (!$manga->count()) {
+                echo "<tr>";
+                echo "<td colspan='4'>";
+                echo "</td>";
+                echo "</tr>";
+              } else { 
+            foreach ($manga as $value) {
+          ?>
+            <tr>
+              <td>
+                <img src="<?= base_url()?>uploads/<?=$value->thumbnail?>" width="50" height="70">
+              </td>
+              <td><?= $value->title?></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-primary">Tambah Chapter</button>
+              </td>
+              <td>
+                <a class="btn btn-sm text-white btn-warning" href="<?= base_url() ?>index.php/admin/editmanga?id=<?= $value->id_manga?>">Ubah</a>
+                <a class="btn btn-sm text-white btn-danger" href="<?= base_url() ?>index.php/manga/hapus?id=<?= $value->id_manga?>">Hapus</a>
+              </td>
+            </tr>
+          <?php
+                } // end foreach
+
+              } // end else
+          ?>
         </tbody>
       </table>
       <!-- Table -->
