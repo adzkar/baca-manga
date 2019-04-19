@@ -9,7 +9,7 @@
             <div class="form-group">
                 <a href="<?= base_url() ?>index.php/admin/view" class="btn btn-block btn-custom">View</a>
             </div>
-            <a href="" class="btn btn-block btn-custom">Logout</a>
+            <a href="<?= base_url()?>index.php/admin/logout" class="btn btn-block btn-custom">Logout</a>
         </form>
     </div>
 </div>
