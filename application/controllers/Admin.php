@@ -6,7 +6,7 @@ class Admin extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model(['Admin_m','Manga_m']);
+        $this->load->model(['Admin_m','Manga_m','Chapter_m']);
     }
 
 	// view controller
@@ -90,6 +90,43 @@ class Admin extends CI_Controller {
 			'content' => 'admin/v_admincari',
 			'data' => [
 				'manga' => Manga_m::All()
+			]
+		];
+		$this->template->view($data);
+	}
+
+	public function mangadetil($id = null)
+	{
+		$manga = Manga_m::find($id);
+		$this->validation->wrong_validate([
+			'session' => 'status_login',
+			'url' => 'admin/login'
+		]);
+		$data = [
+			'title' => 'Add Chapter',
+			'content' => 'admin/v_mangadetil',
+			'data' => [
+				'manga' => $manga,
+				'chapters' => $manga->chapters
+			]
+		];
+		$this->template->view($data);
+	}
+
+	public function editchapter()
+	{
+		$chapter = Chapter_m::find($_GET['id_chapter']);
+		$manga = Manga_m::find($_GET['id_manga']);
+		$this->validation->wrong_validate([
+			'session' => 'status_login',
+			'url' => 'admin/login'
+		]);
+		$data = [
+			'title' => 'Add Chapter',
+			'content' => 'admin/v_editchapter',
+			'data' => [
+				'chapter' => $chapter,
+				'manga' => $manga
 			]
 		];
 		$this->template->view($data);

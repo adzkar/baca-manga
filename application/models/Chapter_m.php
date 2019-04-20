@@ -2,7 +2,7 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	use Illuminate\Database\Eloquent\Model as Eloquent;
 	
-	class Chapter extends Eloquent
+	class Chapter_m extends Eloquent
 	{
 	    protected $table = 'chapter';
 	    protected $primaryKey = 'id_chapter';
@@ -12,7 +12,7 @@
 
 		public function manga()
 				{
-					return $this->belongsTo(Manga::class, 'id_manga', 'id_manga');
+					return $this->belongsTo(Manga_m::class, 'id_manga', 'id_manga');
 				}		
 
 	}

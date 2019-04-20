@@ -16,7 +16,7 @@
 
 		public function chapters()
 				{
-					return $this->hasMany(Chapter::class,'id_manga');
+					return $this->hasMany(Chapter_m::class,'id_manga');
 				}		
 
 	}

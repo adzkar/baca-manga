@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-- container -->
 <div class="container">
   <div class="row justify-content-md-center">
@@ -34,7 +33,7 @@
           <?php
             if (!$manga->count()) {
                 echo "<tr>";
-                echo "<td colspan='4'>";
+                echo "<td colspan='4'><p>Belum ada yang ditambahkan</p>";
                 echo "</td>";
                 echo "</tr>";
               } else { 
@@ -46,7 +45,7 @@
               </td>
               <td><?= $value->title?></td>
               <td>
-                <button type="button" class="btn btn-sm btn-primary">Tambah Chapter</button>
+                <a class="btn btn-sm btn-primary" href="<?= base_url() ?>index.php/admin/mangadetil/<?=$value->id_manga?>">Tambah Chapter</a>
               </td>
               <td>
                 <a class="btn btn-sm text-white btn-warning" href="<?= base_url() ?>index.php/admin/editmanga?id=<?= $value->id_manga?>">Ubah</a>
