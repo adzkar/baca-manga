@@ -86,36 +86,36 @@ class Manga extends CI_Controller {
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 15000;
 
-		echo $this->load->library('upload', $config);
+		$this->load->library('upload', $config);
 
 		$file_name = "";
 
-		// if ( ! $this->upload->do_upload('file'))
-  //       {
-  //               $error = array('error' => $this->upload->display_errors());
-  //               print_r($error);
-  //       }
-  //       else
-  //       {
-  //               $data = array('upload_data' => $this->upload->data());
-		// 		$file_name = $data['upload_data']['file_name'];
-  //       }
-		// if ($file_name != "")
-		// 	$manga->update(['thumbnail' => $file_name]);
+		if ( ! $this->upload->do_upload('file'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+                print_r($error);
+        }
+        else
+        {
+                $data = array('upload_data' => $this->upload->data());
+				$file_name = $data['upload_data']['file_name'];
+        }
+		if ($file_name != "")
+			$manga->update(['thumbnail' => $file_name]);
 
-		// $save = $manga->update([
-		// 	'title' => $_POST['title'],
-		// 	'alternative_title' => $_POST['alternative_title'],
-		// 	'author' => $_POST['author'],
-		// 	'artist' => $_POST['artis'],
-		// 	'type' => $_POST['genre'],
-		// 	'sinopsis' => $_POST['sinopsis']
-		// ]);
-		// if ($save)
-		// 	$this->session->set_flashdata('success', 'Manga Updated');
-		// else
-		// 	$this->session->set_flashdata('errors', 'Unsuccessfully Update');
-		// redirect('admin/view');
+		$save = $manga->update([
+			'title' => $_POST['title'],
+			'alternative_title' => $_POST['alternative_title'],
+			'author' => $_POST['author'],
+			'artist' => $_POST['artis'],
+			'type' => $_POST['genre'],
+			'sinopsis' => $_POST['sinopsis']
+		]);
+		if ($save)
+			$this->session->set_flashdata('success', 'Manga Updated');
+		else
+			$this->session->set_flashdata('errors', 'Unsuccessfully Update');
+		redirect('admin/view');
 	}
 
 	public function addchapter($id = null)
