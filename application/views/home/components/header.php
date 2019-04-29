@@ -25,13 +25,13 @@
 					<div class="menu">
 						<ul>
 							<li><a href="<?= base_url() ?>">Home</a></li>
-							<li><a href="#">Daftar Komik</a></li>
+							<li><a href="<?= base_url() ?>index.php/home/allManga">Daftar Komik</a></li>
 							<li><a href="#">Daftar Video</a></li>
 							<li><a href="#">Anime On Going</a></li>
 							<li><a href="#">TV series</a></li>
 							<li><a href="#">Lowongan</a></li>
-							<li><a href="#">Youtube</a></li>
-							<li><a href="#">Group</a></li>
+							<li><a href="https://www.youtube.com/channel/UCmCMVhfL3kJ8Xr2a18uWrFQ" target="_blank">Youtube</a></li>
+							<li><a href="https://www.facebook.com/groups/465470483575238/" target="_blank">Group</a></li>
 							<li><a href="#">QNA - Contact Us</a></li>
 						</ul>
 					</div>

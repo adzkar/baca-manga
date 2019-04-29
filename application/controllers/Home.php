@@ -48,4 +48,16 @@ class Home extends CI_Controller {
 		$this->template->view_home($data);
 	}
 
+	public function allManga()
+	{
+		$data = [
+			'title' => 'Mangaku | Boruto &#8211; Baca Manga Indonesia, Nonton Anime, Film Subtitle Indonesia | Komik Online',
+			'content' => 'home/daftarmanga',
+			'data' => [
+				'manga' => Manga_m::All()
+			]
+		];
+		$this->template->view_home($data);
+	}
+
 }

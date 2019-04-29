@@ -36,7 +36,7 @@
 			<!-- View All -->
 			<div class="col-2"></div>
 			<div class="col-8">
-				<a href="#" target="_blank" title="View all Manga" class="btn">
+				<a href="<?= base_url() ?>index.php/home/allManga" target="_blank" title="View all Manga" class="btn">
 					View all Komik
 				</a>
 				<a href="#" target="_blank" title="View all Anime" class="btn">

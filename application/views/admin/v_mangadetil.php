@@ -93,7 +93,7 @@
             <td><?= $value->title_chapter?></td>
             <td><?= $value->release_date ?></td>
             <td>
-              <a class="btn btn-sm text-white btn-info" href="<?= base_url() ?>index.php/admin/editmanga?id=<?= $value->id_manga?>">Lihat</a>
+              <a class="btn btn-sm text-white btn-info" href="<?= base_url() ?>index.php/home/chapter/<?= $value->id_chapter?>" target="_blank">Lihat</a>
               <a class="btn btn-sm text-white btn-warning" href="<?= base_url() ?>index.php/admin/editchapter?id_manga=<?= $value->id_manga?>&id_chapter=<?= $value->id_chapter ?>">Ubah</a>
               <a class="btn btn-sm text-white btn-danger" href="<?= base_url() ?>index.php/manga/hapuschapter?id_manga=<?= $value->id_manga?>&id_chapter=<?=$value->id_chapter?>">Hapus</a>
             </td>
